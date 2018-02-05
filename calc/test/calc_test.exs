@@ -10,8 +10,8 @@ defmodule CalcTest do
     assert Calc.eval("5 * 1") === 5
   end
 
-  test "24 / 4 outputs 5" do
-    assert Calc.eval("24 / 4") === 5
+  test "4 / 4 outputs 1" do
+    assert Calc.eval("4 / 4") === 1
   end
 
   test "25 / 6 + (5 - 1) outputs 5" do
