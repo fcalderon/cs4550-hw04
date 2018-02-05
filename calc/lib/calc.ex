@@ -24,7 +24,7 @@ defmodule Calc do
       if hasParen(spaceLessExpression) do
         5
       else
-        operands = extractOperands(asArray)
+        operands = extractOperands(spaceLessExpression)
         operators = extractOperators(asArray)
         extractOperators(asArray)
         Enum.reduce(0..length(operators) - 1, 0, fn(opIndex, res)
@@ -73,8 +73,8 @@ defmodule Calc do
     end
   end
 
-  defp extractOperands(expArr) do
-    Enum.filter(expArr, fn(x) -> is_numeric(x) end)
+  defp extractOperands(expString) do
+    String.split(expString, ~r/\+|\*|-|\//)
   end
 
   defp extractOperators(expArr) do
